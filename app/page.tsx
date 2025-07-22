@@ -249,9 +249,14 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl md:text-2xl mb-8 text-gray-600 max-w-2xl mx-auto lg:mx-0"
+              className="font-poppins text-base md:text-lg mb-8 text-gray-600 max-w-2xl mx-auto lg:mx-0 tracking-wider leading-relaxed"
             >
-              Frontend Developer | WordPress Expert | LaTeX Expert | Technical Writing | Thriving Professional
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent font-medium">
+                Frontend Developer
+              </span>{" "}
+              |<span className="text-gray-700"> WordPress Expert </span> |
+              <span className="text-gray-700"> LaTeX Expert </span> |
+              <span className="text-gray-700"> Technical Writing </span>
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
