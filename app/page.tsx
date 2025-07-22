@@ -156,9 +156,10 @@ export default function Portfolio() {
     return (
       <Link
         href={href}
-        className={`relative px-3 py-2 rounded-lg transition-all duration-300 ${
+        className={`relative px-3 py-2 rounded-lg transition-all duration-300 flex items-center ${
           isActive ? "text-blue-600 bg-blue-50 font-semibold" : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
         }`}
+        onClick={() => setIsMenuOpen(false)}
       >
         {children}
         {isActive && (
@@ -214,13 +215,15 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden bg-white border-t px-4 py-4 space-y-2"
+            className="md:hidden bg-white border-t px-4 py-4"
           >
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#skills">Skills</NavLink>
-            <NavLink href="#experience">Experience</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
+            <div className="flex flex-col space-y-3">
+              <NavLink href="#home">Home</NavLink>
+              <NavLink href="#about">About</NavLink>
+              <NavLink href="#skills">Skills</NavLink>
+              <NavLink href="#experience">Experience</NavLink>
+              <NavLink href="#contact">Contact</NavLink>
+            </div>
           </motion.div>
         )}
       </motion.nav>
@@ -228,9 +231,9 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-16 md:pt-0"
       >
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center mt-8 md:mt-0">
           {/* Text Content */}
           <div className="text-center lg:text-left">
             <motion.h1
@@ -287,14 +290,14 @@ export default function Portfolio() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative w-full max-w-lg mx-auto">
+            <div className="relative w-full max-w-sm mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-              <div className="relative bg-white rounded-3xl p-4 shadow-2xl">
+              <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
                 <Image
                   src="https://res.cloudinary.com/dcjaq0ecb/image/upload/v1753207695/1_sr04az.jpg"
                   alt="Deborah Opeyemi - Professional Portrait"
-                  width={500}
-                  height={600}
+                  width={350}
+                  height={420}
                   className="w-full h-auto rounded-2xl object-cover"
                   priority
                 />
